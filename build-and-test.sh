@@ -2,7 +2,7 @@
 
 mkdir ~/install
 git clone https://github.com/aws/aws-sdk-cpp.git
-push aws-sdk-cpp
+pushd aws-sdk-cpp
 mkdir build
 cd build
 cmake .. -DBUILD_ONLY="core" \
