@@ -48,3 +48,11 @@ jobs:
         asset_path: /home/runner/work/ThetisLambda/ThetisLambda/api.zip
         asset_name: api.zip
         asset_content_type: application/zip
+    - name: deploy zip to aws lambda
+      uses: appleboy/lambda-action@master
+      with:
+        aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws_region: ${{ secrets.AWS_REGION }}
+        function_name: demo
+        zip_file: api.zip
