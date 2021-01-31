@@ -40,4 +40,3 @@ popd
 cp build_release/*.zip .
 echo PWD is $PWD
 ls -lh *.zip
-ls -lh *.tbz
