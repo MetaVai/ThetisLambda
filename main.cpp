@@ -42,7 +42,7 @@ invocation_response my_handler(invocation_request const& request)
 
     if (v.ValueExists("headers")) {
         auto headers = v.GetObject("headers");
-        ss << "Happy "
+        ss << "YUK Happy "
            << (headers.ValueExists("day") && headers.GetObject("day").IsString() ? headers.GetString("day") : "")
            << "!";
     }
