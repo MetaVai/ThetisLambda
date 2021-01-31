@@ -22,9 +22,9 @@ mkdir build
 cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release \
   -DBUILD_SHARED_LIBS=OFF \
-  -DCMAKE_INSTALL_PREFIX=~/install \
-make
-make install
+  -DCMAKE_INSTALL_PREFIX=~/install || exit 1
+make || exit 1
+make install || exit 1
 popd 
 
 rm -Rvf build_release
