@@ -6,7 +6,6 @@ using namespace aws::lambda_runtime;
 
 invocation_response my_handler(invocation_request const& request)
 {
-
     using namespace Aws::Utils::Json;
 
     JsonValue json(request.payload);
