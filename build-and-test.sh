@@ -2,7 +2,7 @@
 
 mkdir ~/install
 git clone https://github.com/aws/aws-sdk-cpp.git
-cd aws-sdk-cpp
+push aws-sdk-cpp
 mkdir build
 cd build
 cmake .. -DBUILD_ONLY="core" \
@@ -14,9 +14,10 @@ cmake .. -DBUILD_ONLY="core" \
   -DENABLE_UNITY_BUILD=ON || exit 1
 make || exit 1
 make install || exit 1
+popd
 
 git clone https://github.com/awslabs/aws-lambda-cpp-runtime.git
-cd aws-lambda-cpp-runtime
+pushd aws-lambda-cpp-runtime
 mkdir build
 cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release \
@@ -24,6 +25,7 @@ cmake .. -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_INSTALL_PREFIX=~/install \
 make
 make install
+popd 
 
 rm -Rvf build_release
 mkdir build_release
